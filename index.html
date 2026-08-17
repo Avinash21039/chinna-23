@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bestie Memories 💖</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        background: linear-gradient(
+            135deg,
+            #ff9a9e,
+            #fad0c4,
+            #fbc2eb,
+            #a6c1ee
+        );
+
+        background-size: 400% 400%;
+        animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Floating hearts */
+
+    .heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        animation: floatUp linear infinite;
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    .heart:nth-child(1) {
+        left: 10%;
+        animation-duration: 7s;
+    }
+
+    .heart:nth-child(2) {
+        left: 25%;
+        animation-duration: 10s;
+        animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+        left: 45%;
+        animation-duration: 8s;
+        animation-delay: 1s;
+    }
+
+    .heart:nth-child(4) {
+        left: 65%;
+        animation-duration: 11s;
+        animation-delay: 3s;
+    }
+
+    .heart:nth-child(5) {
+        left: 85%;
+        animation-duration: 9s;
+        animation-delay: 1s;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Login card */
+
+    .login-card {
+        width: 390px;
+        padding: 40px 35px;
+
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255,255,255,0.4);
+        border-radius: 30px;
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,0.2);
+
+        animation: cardAppear 1.2s ease;
+        z-index: 10;
+    }
+
+    @keyframes cardAppear {
+        from {
+            opacity: 0;
+            transform: translateY(60px) scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .emoji {
+        text-align: center;
+        font-size: 55px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        margin: 10px 0 5px;
+        font-size: 30px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+
+    .input-box {
+        margin-bottom: 17px;
+    }
+
+    label {
+        display: block;
+        color: white;
+        font-size: 13px;
+        margin-bottom: 7px;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px 15px;
+
+        border: none;
+        outline: none;
+        border-radius: 14px;
+
+        background: rgba(255,255,255,0.85);
+        color: #444;
+        font-size: 14px;
+
+        transition: 0.3s;
+    }
+
+    input:focus {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 14px;
+
+        border: none;
+        border-radius: 15px;
+
+        background: linear-gradient(
+            135deg,
+            #ff4f81,
+            #ff758c
+        );
+
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        box-shadow: 0 8px 20px rgba(255,75,120,0.35);
+
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(255,75,120,0.5);
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+    #message {
+        text-align: center;
+        color: white;
+        margin-top: 15px;
+        font-size: 14px;
+        min-height: 20px;
+    }
+
+    /* Mobile */
+
+    @media(max-width: 450px) {
+        .login-card {
+            width: 90%;
+            padding: 30px 25px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+
+<div class="heart">💖</div>
+<div class="heart">💕</div>
+<div class="heart">💗</div>
+<div class="heart">💞</div>
+<div class="heart">💓</div>
+
+
+<!-- Login Card -->
+
+<div class="login-card">
+
+    <div class="emoji">🫶</div>
+
+    <h1>Bestie Memories</h1>
+
+    <p class="subtitle">
+        Let's see if you're really my bestie 💕
+    </p>
+
+
+    <div class="input-box">
+        <label>Your Name</label>
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+        >
+    </div>
+
+
+    <div class="input-box">
+        <label>Date of Birth</label>
+        <input
+            type="date"
+            id="dob"
+        >
+    </div>
+
+
+    <div class="input-box">
+        <label>Favourite Food 🍕</label>
+        <input
+            type="text"
+            id="food"
+            placeholder="What's your favourite food?"
+        >
+    </div>
+
+
+    <div class="input-box">
+        <label>Favourite Person ❤️</label>
+        <input
+            type="text"
+            id="person"
+            placeholder="Who is your favourite person?"
+        >
+    </div>
+
+
+    <button onclick="enterMemories()">
+        Enter Our World 💖
+    </button>
+
+    <div id="message"></div>
+
+</div>
+
+
+<script>
+
+function enterMemories() {
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const dob =
+        document.getElementById("dob").value;
+
+    const food =
+        document.getElementById("food").value.trim();
+
+    const person =
+        document.getElementById("person").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+
+    if (!name || !dob || !food || !person) {
+
+        message.innerHTML =
+            "Please fill everything first 🥺💗";
+
+        return;
+    }
+
+
+    message.innerHTML =
+        "Welcome, " + name + " 💕";
+
+
+    /*
+       Save the information so the next page
+       can use it.
+    */
+
+    localStorage.setItem("bestieName", name);
+    localStorage.setItem("bestieDOB", dob);
+    localStorage.setItem("bestieFood", food);
+    localStorage.setItem("bestiePerson", person);
+
+
+    /*
+       Small animation before moving
+       to the next page.
+    */
+
+    document.querySelector(".login-card").style.transform =
+        "scale(0.8)";
+
+    document.querySelector(".login-card").style.opacity =
+        "0";
+
+    document.querySelector(".login-card").style.transition =
+        "1s";
+
+
+    setTimeout(() => {
+
+        // Change this later to your second page
+        window.location.href = "page2.html";
+
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>

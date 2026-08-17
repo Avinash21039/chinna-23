@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I'm Sorry ❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        linear-gradient(
+            rgba(25, 18, 35, .28),
+            rgba(25, 18, 35, .45)
+        ),
+        linear-gradient(
+            135deg,
+            #e8c5c9,
+            #d8c0d8,
+            #b8c7d9
+        );
+
+    color: white;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.scene {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* Moon */
+
+.moon {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: 10%;
+    top: 10%;
+
+    border-radius: 50%;
+
+    background: #fff7d6;
+
+    box-shadow:
+        0 0 30px rgba(255,247,214,.8),
+        0 0 80px rgba(255,247,214,.35);
+
+    animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+
+    0%,100% {
+        box-shadow:
+            0 0 30px rgba(255,247,214,.7),
+            0 0 70px rgba(255,247,214,.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 45px rgba(255,247,214,.95),
+            0 0 100px rgba(255,247,214,.45);
+    }
+}
+
+
+/* Stars */
+
+.star {
+    position: absolute;
+
+    color: white;
+
+    animation: twinkle 2s infinite alternate;
+}
+
+.s1 { top: 12%; left: 12%; }
+.s2 { top: 22%; left: 30%; animation-delay: .5s; }
+.s3 { top: 15%; left: 55%; animation-delay: 1s; }
+.s4 { top: 30%; left: 80%; animation-delay: .8s; }
+.s5 { top: 8%; left: 72%; animation-delay: 1.4s; }
+.s6 { top: 35%; left: 8%; animation-delay: .3s; }
+
+@keyframes twinkle {
+
+    from {
+        opacity: .2;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* Ground */
+
+.ground {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 28%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(35,30,42,.85),
+            rgba(65,55,75,.25)
+        );
+
+    border-radius: 50% 50% 0 0 / 12% 12% 0 0;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.intro {
+    position: absolute;
+
+    top: 7%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    z-index: 20;
+
+    animation: introAppear 2s ease forwards;
+}
+
+.intro h1 {
+    font-size: 42px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 5px 25px rgba(0,0,0,.4);
+}
+
+.intro p {
+    margin-top: 8px;
+
+    font-size: 16px;
+
+    opacity: .85;
+}
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   CHARACTERS
+========================= */
+
+.character {
+    position: absolute;
+
+    bottom: 18%;
+
+    width: 170px;
+    height: 330px;
+
+    z-index: 10;
+}
+
+
+/* BOY */
+
+.boy {
+
+    left: -200px;
+
+    animation:
+        boyWalk 5s cubic-bezier(.2,.8,.2,1) forwards;
+
+    animation-delay: 1s;
+}
+
+
+@keyframes boyWalk {
+
+    0% {
+        left: -200px;
+    }
+
+    75% {
+        left: 39%;
+    }
+
+    100% {
+        left: 39%;
+    }
+}
+
+
+/* GIRL */
+
+.girl {
+
+    right: 22%;
+
+    opacity: 0;
+
+    animation:
+        girlAppear 2s ease forwards;
+
+    animation-delay: 2.5s;
+}
+
+@keyframes girlAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================
+   HEAD
+========================= */
+
+.head {
+    position: absolute;
+
+    top: 10px;
+    left: 40px;
+
+    width: 90px;
+    height: 100px;
+
+    border-radius:
+        48% 48% 45% 45%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4c7a1,
+            #d99b72
+        );
+
+    box-shadow:
+        inset -8px -8px 15px rgba(80,40,20,.15);
+}
+
+
+/* Boy hair */
+
+.boy .head::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -10px;
+    left: 3px;
+
+    width: 85px;
+    height: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #3b2924
+        );
+
+    border-radius:
+        60% 60% 30% 30%;
+
+}
+
+
+/* Girl hair */
+
+.girl .head::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -15px;
+    left: -15px;
+
+    width: 120px;
+    height: 170px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171313,
+            #3a2525
+        );
+
+    border-radius:
+        55% 55% 45% 45%;
+
+    z-index: -1;
+}
+
+
+/* Eyes */
+
+.eye {
+    position: absolute;
+
+    top: 48px;
+
+    width: 9px;
+    height: 9px;
+
+    background: #222;
+
+    border-radius: 50%;
+}
+
+.eye.left {
+    left: 25px;
+}
+
+.eye.right {
+    right: 25px;
+}
+
+
+/* Nose */
+
+.nose {
+    position: absolute;
+
+    top: 61px;
+    left: 42px;
+
+    width: 7px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(120,70,50,.2);
+}
+
+
+/* Smile */
+
+.mouth {
+    position: absolute;
+
+    top: 76px;
+    left: 32px;
+
+    width: 28px;
+    height: 12px;
+
+    border-bottom:
+        3px solid #9a4f58;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+.body {
+
+    position: absolute;
+
+    top: 105px;
+    left: 15px;
+
+    width: 140px;
+    height: 190px;
+
+    border-radius:
+        40px 40px 10px 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #26364a,
+            #111b29
+        );
+
+    box-shadow:
+        inset -12px 0 20px rgba(255,255,255,.06);
+}
+
+
+/* Girl dress */
+
+.girl .body {
+
+    top: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d4969,
+            #4d2948
+        );
+
+    border-radius:
+        45px 45px 20px 20px;
+
+    width: 150px;
+}
+
+
+/* Arms */
+
+.arm {
+
+    position: absolute;
+
+    width: 28px;
+    height: 130px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #efb88f,
+            #ca8d67
+        );
+
+    top: 120px;
+}
+
+
+/* Boy arms */
+
+.boy .arm.left {
+    left: -5px;
+
+    transform: rotate(15deg);
+}
+
+.boy .arm.right {
+    right: -5px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* Girl arms */
+
+.girl .arm.left {
+    left: -5px;
+
+    transform: rotate(20deg);
+}
+
+.girl .arm.right {
+    right: -5px;
+
+    transform: rotate(-20deg);
+}
+
+
+/* Legs */
+
+.leg {
+
+    position: absolute;
+
+    width: 38px;
+    height: 100px;
+
+    background: #151c29;
+
+    bottom: -65px;
+
+    border-radius: 20px;
+}
+
+.leg.left {
+    left: 42px;
+}
+
+.leg.right {
+    right: 42px;
+}
+
+
+/* Girl legs/dress base */
+
+.girl .leg {
+    background: #4b3045;
+}
+
+
+/* =========================
+   BOUQUET
+========================= */
+
+.bouquet {
+
+    position: absolute;
+
+    left: 105px;
+    top: 145px;
+
+    width: 100px;
+    height: 100px;
+
+    opacity: 0;
+
+    animation:
+        bouquetAppear 1s ease forwards;
+
+    animation-delay: 4.7s;
+
+    z-index: 30;
+}
+
+
+@keyframes bouquetAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.4) rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* Flowers */
+
+.flower {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    animation: flowerFloat 2s ease-in-out infinite;
+}
+
+.f1 {
+    left: 15px;
+    top: 15px;
+}
+
+.f2 {
+    left: 45px;
+    top: 5px;
+    animation-delay: .3s;
+}
+
+.f3 {
+    left: 65px;
+    top: 30px;
+    animation-delay: .6s;
+}
+
+.f4 {
+    left: 30px;
+    top: 40px;
+    animation-delay: .9s;
+}
+
+@keyframes flowerFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Bouquet stem */
+
+.bouquet::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 12px;
+
+    background: #496b45;
+
+    left: 25px;
+    top: 70px;
+
+    transform: rotate(55deg);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   SORRY MESSAGE
+========================= */
+
+.sorry {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform:
+        translateX(-50%)
+        scale(.5);
+
+    z-index: 40;
+
+    font-size: 42px;
+
+    color: #fff;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.5);
+
+    opacity: 0;
+
+    animation:
+        sorryAppear 1.5s ease forwards;
+
+    animation-delay: 5.5s;
+}
+
+@keyframes sorryAppear {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(.5);
+    }
+
+    70% {
+        transform:
+            translateX(-50%)
+            scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 3%;
+
+    transform: translateX(-50%);
+
+    z-index: 50;
+
+    padding: 12px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #b84d72;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    animation:
+        buttonAppear 1s ease forwards;
+
+    animation-delay: 7s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    transition: .3s;
+}
+
+.button:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.3);
+}
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -40px;
+
+    font-size: 24px;
+
+    animation:
+        floatHeart linear infinite;
+
+    z-index: 2;
+}
+
+.h1 {
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.h2 {
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.h3 {
+    left: 55%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.h4 {
+    left: 75%;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+.h5 {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 4s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        bottom: -40px;
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform:
+            scale(1.3)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .intro p {
+        font-size: 13px;
+    }
+
+    .character {
+        transform: scale(.75);
+        transform-origin: bottom center;
+    }
+
+    .boy {
+        animation:
+            boyWalkMobile 5s ease forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes boyWalkMobile {
+
+        0% {
+            left: -180px;
+        }
+
+        100% {
+            left: 22%;
+        }
+    }
+
+    .girl {
+        right: 3%;
+    }
+
+    .sorry {
+        font-size: 32px;
+        white-space: nowrap;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="scene">
+
+
+    <!-- Moon -->
+
+    <div class="moon"></div>
+
+
+    <!-- Stars -->
+
+    <div class="star s1">✦</div>
+    <div class="star s2">✧</div>
+    <div class="star s3">✦</div>
+    <div class="star s4">✧</div>
+    <div class="star s5">✦</div>
+    <div class="star s6">✧</div>
+
+
+    <!-- Floating hearts -->
+
+    <div class="floating-heart h1">💗</div>
+    <div class="floating-heart h2">💕</div>
+    <div class="floating-heart h3">❤️</div>
+    <div class="floating-heart h4">💖</div>
+    <div class="floating-heart h5">💞</div>
+
+
+    <!-- Ground -->
+
+    <div class="ground"></div>
+
+
+    <!-- Title -->
+
+    <div class="intro">
+
+        <h1>One Little Sorry... ❤️</h1>
+
+        <p>
+            Sometimes saying sorry is the beginning of something beautiful.
+        </p>
+
+    </div>
+
+
+    <!-- =====================
+         BOY
+    ====================== -->
+
+    <div class="character boy">
+
+        <div class="head">
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+
+        <div class="body"></div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+
+        <!-- Bouquet -->
+
+        <div class="bouquet">
+
+            <div class="flower f1">🌹</div>
+            <div class="flower f2">🌷</div>
+            <div class="flower f3">🌹</div>
+            <div class="flower f4">🌸</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================
+         GIRL
+    ====================== -->
+
+    <div class="character girl">
+
+        <div class="head">
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="nose"></div>
+
+            <div class="mouth"></div>
+
+        </div>
+
+
+        <div class="body"></div>
+
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+
+    </div>
+
+
+    <!-- Sorry -->
+
+    <div class="sorry">
+        I'm Sorry 🥺❤️
+    </div>
+
+
+    <!-- Next -->
+
+    <button
+        class="button"
+        onclick="nextPage()"
+    >
+        Read My Message 💌
+    </button>
+
+</div>
+
+
+<script>
+
+function nextPage() {
+
+    document.body.style.transition =
+        "1s ease";
+
+    document.body.style.opacity =
+        "0";
+
+    document.body.style.transform =
+        "scale(1.05)";
+
+    setTimeout(() => {
+
+        window.location.href =
+            "page4.html";
+
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>
